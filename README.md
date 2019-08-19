@@ -1,2 +1,2 @@
-# study
+# Study
 This is a study repository. Interview questions, documentation and examples
