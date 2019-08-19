@@ -4,6 +4,14 @@ Let's begin!
 ## Documentation
 https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object
 
+## Interview Questions:
+* How I can create an object?
+* How I can get attr from an object?
+* How I can set an object read only?
+* How I can set an attr read only?
+* How I can get all the values from an object?
+* How I can get all the attributes from an object?
+
 ## What is a Object in js?
 > **Object**: A set of attributes and values
 
