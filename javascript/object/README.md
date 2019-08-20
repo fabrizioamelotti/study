@@ -2,7 +2,7 @@
 Let's begin!
 
 ## Documentation
-https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 
 ## Interview Questions:
 * How I can create an object?
