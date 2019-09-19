@@ -33,7 +33,7 @@ const arrLength = arr.length;
 arr.fill(7);
 
 // Check the length
-console.log(`Length: ${arr.length}`);
+console.log(`Length: ${arrLength}`);
 
 let count = 0;
 while(count < 10) {
@@ -42,38 +42,50 @@ while(count < 10) {
 
     // Array forEach
     console.time("forEach");
-    arr.forEach(a => a + 1);
+    let sumForEach = 0;
+    arr.forEach(a => sumForEach += a);
     console.timeEnd("forEach");
     
     // For
     console.time("for");
-    for (let i = 0; arrLength < i; i++) {
-        arr[i] + 1;
+    let sumFor = 0;
+    for (let i = 0; i < arrLength; i++) {
+        sumFor += arr[i];
     }
     console.timeEnd("for");
     
     // ForIn
     console.time("forIn");
+    let sumForIn = 0;
     for (let i in arr) {
-        arr[i] + 1;
+        sumForIn += arr[i];
     }
     console.timeEnd("forIn");
 
     // ForOf
     console.time("forOf");
+    let sumForOf = 0;
     for (let i of arr) {
-        arr[i] + 1;
+        sumForOf += arr[i];
     }
     console.timeEnd("forOf");
     
     // While
     console.time("while");
-    let i = 0;
-    while (arrLength < i) {
-      arr[i] + 1;
-      i++;
+    let j = 0;
+    let sumWhile = 0;
+    while (j < arrLength) {
+      sumWhile += arr[j];
+      j++;
     }
     console.timeEnd("while");
+    
+    // Sums
+    console.log(`Sum sumForEach: ${sumForEach}`);
+    console.log(`Sum sumFor: ${sumFor}`);
+    console.log(`Sum sumForIn: ${sumForIn}`);
+    console.log(`Sum sumForOf: ${sumForOf}`);
+    console.log(`Sum sumWhile: ${sumWhile}`);
 
     count++; 
 }
