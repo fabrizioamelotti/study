@@ -58,10 +58,17 @@ while(count < 10) {
         arr[i] + 1;
     }
     console.timeEnd("forIn");
+
+    // ForOf
+    console.time("forOf");
+    for (let i of arr) {
+        arr[i] + 1;
+    }
+    console.timeEnd("forOf");
     
     // While
-    let i = 0;
     console.time("while");
+    let i = 0;
     while (arrLength < i) {
       arr[i] + 1;
       i++;
