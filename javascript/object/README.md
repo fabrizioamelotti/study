@@ -6,25 +6,25 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ## Interview Questions:
 * How I can create an object?
-* How I can get attr from an object?
+* How I can get an attribute from an object?
 * How I can combine the attributes of two objects?
 * How I can set an object read only?
-* How I can set an attr read only?
+* How I can set an attribute read only?
 * How I can get all the attributes from an object?
 * How I can get all the values from an object?
 
 ## What is a Object in js?
 > **Object**: A set of attributes and values
 
-> In javascript: 
+> In javascript:
 ```
 {
     <attr>: <value>,
     <attr>: <method>
 }
-
-// Example:
-let person = {
+``` 
+```javascript
+const person = {
    id: 1,
    name: "Fabrizio",
    surname: "Amelotti",
@@ -37,7 +37,7 @@ let person = {
    },
    rewards: [1,2,3,4],
    getFullName: function() {
-       return this.name + ' ' +this.surname
+       return `${this.name} ${this.surname}`
    }
 }
 ``` 
