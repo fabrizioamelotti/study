@@ -1,4 +1,4 @@
-#Arrays
+# Arrays
 An Arrry is a JavaScript object type. It's a list of other objects.
 
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
