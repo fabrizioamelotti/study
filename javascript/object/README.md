@@ -64,33 +64,38 @@ person["getFullName"]()
 > How I can combine the attributes of two objects?
 >
 > Merge | Assign : Copies the values of all enumerable own properties from one or more source objects to a target object
-```
-let object1 = {
+```javascript
+const object1 = {
     id: 1,
     name: "Fabrizio"
 };
-let object2 = {
-    name: "Samuel",
+
+const object2 = {
+    boolean: true,
     list: [1,2,3,4],
-    boolean: true
+    name: "Samuel"  
 };
 
 Object.assign(object1, object2);
 
-// Result:
-// All the attrs from object2 now are inside of object1, 
-// if there is some attr with the same name is overridden
+console.log(object1);
+console.log(object2);
+/**
+Result:
+All the attrs from object2 now are inside of object1, 
+if there is some attr with the same name is overridden
 object1 = {
-    name: "Samuel",
-    list: [1,2,3,4],
     boolean: true,
-    id: 1
+    id: 1,
+    list: [1,2,3,4], 
+    name: "Samuel"
 };
 object2 = {
-    name: "Samuel",
+    boolean: true,
     list: [1,2,3,4],
-    boolean: true
+    name: "Samuel"
 };
+*/
 ```
 > How I can set an attr read only?
 >
