@@ -72,6 +72,7 @@ while(count < 10) {
 }
 ```
 > Fill: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+
 > Tip: Is very important use other variable for the length! - const arrLength = arr.length - It's faster
 
 After several times... the winer is --> WHILE !!!
