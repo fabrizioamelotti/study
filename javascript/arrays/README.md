@@ -1,5 +1,5 @@
 # Arrays
-An Arrry is a JavaScript object type. It's a list of other objects.
+An Array is a JavaScript object type. It's a list of other objects.
 
 Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
@@ -23,7 +23,7 @@ const mix = [1, "Hi", [2,4,6], {}, true];
 ```
 
 ## Check if array is empty, undefined or null
-If we have to check if the array exist or even more, if is empty, we can do this:
+Ir we have to check if the array exist or even more, if is empty, we can do this:
 ```javascript
 // Check if is an array
 const number = 1;
@@ -39,7 +39,7 @@ console.log(`isArray array? ${Array.isArray(emptyArray)}`);
 // True
 
 // Check null
-// If checks if the condition is true or false
+// IF - Check the condition is true or false
 if (emptyArray) {
     console.log("Array exist");
 } else {
