@@ -73,3 +73,58 @@ The issue is because in javascript the variables exist just in a specific block.
 > Bloque hello & bye - localVariable exist just here, in the hello function
 > 
 > The same happend with the bye function, that's why too we can use the same name in both functions.
+
+# VAR
+The first way to create a variable in javascript was "var".
+
+> Some information
+>
+> Re-Declaring - You can re-declare the variable
+
+```javascript
+var number = 1;
+console.log(number);
+var number;
+console.log(number);
+var number = 2;
+console.log(number);
+
+// Result
+// 1
+// 1
+// 2
+```
+
+# LET
+sdfdsfs
+
+> Some information
+>
+> Re-declare is not allowed
+
+```javascript
+let number = 1;
+console.log(number);
+let number;
+
+// Result
+// Error - Uncaught SyntaxError: Identifier 'number' has already been declared
+```
+
+# CONST
+asdsadsad
+
+> some infor
+>
+
+# VAR vs LET
+adssda
+
+Examples:
+```javascript
+
+```
+
+# HOISTING
+adsada
+
