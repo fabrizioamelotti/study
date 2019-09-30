@@ -153,3 +153,9 @@ Sort according to importance (normal or important) and origin (author, user, or 
 3. author normal declarations
 4. author important declarations
 5. user important declarations
+
+## Media Types
+1. **all** | Used for all media type devices.
+2. **print** | Used for printers.
+3. **screen** | Used for computer screens, tablets, smart-phones etc.
+3. **speech** | Used for screenreaders that "reads" the page out loud.
