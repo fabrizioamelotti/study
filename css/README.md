@@ -11,7 +11,7 @@ All HTML elements can be considered as boxes.The CSS box model is essentially a 
 > 
 > Height = height + padding-top + padding-bottom + border-top + border-bottom
 > 
->Margin is taken out-side of the border and it affects containers width/height and doesn't affect the element.
+> Margin is taken out-side of the border and it affects containers width/height and doesn't affect the element.
 
 If you don’t declare a width, and the box has static or relative positioning, the width will remain 100% in width and the padding and border will push inwards instead of outward. But if you explicitly set the width of the box to be 100%, the padding will push the box outward as normal.
 Absolute box’s width is only as wide as it needs to be to hold the content.
@@ -29,7 +29,7 @@ Here is the list of different types of CSS selectors.
     ```
 3. Class Selectors: Class selector are used to select elements based on their class. For example:
     
-   ```css
+    ```css
     .footer { 
         font-size: 12px;
     }
@@ -43,14 +43,14 @@ Here is the list of different types of CSS selectors.
     ```
 5. Pseudo-Classes and Pseudo-Element: Pseudo-class selectors select elements based on their state. For example: a:hover{color: blue;}. Pseudo elements target specific parts of a HTML element instead of the complete HTML element. For example:
     
-   ```css
+    ```css
     p::first-line{
         background: yellow;
     }
     ```
 6. ID Selector: Id selector is used to select elements based on their id. For example:
     
-   ```css
+    ```css
     #elementId{
         color: orange;
     }
@@ -59,6 +59,12 @@ Here is the list of different types of CSS selectors.
 
     ```html
     <p style="font-size: 22px;">Hello</p>
+    ```
+8. Important!
+    ```css
+    p {
+       color: red !important; 
+    }
     ```
 
 > Check file selectorsExamples.html
@@ -91,3 +97,29 @@ p ~ ul {
   background: #ff0000;
 }
 ```
+
+## Important things
+
+About width and height
+> **margin, padding, left, right**
+>
+> It will be relative to element's parent width (even top and bottom margin/padding will be relative to the parent’s width)
+> 
+
+```html
+<div id="container" style="width: 300px; height: 200px;">
+    <div id="box" style="padding-top: 100%; padding-left: 100%;"></div>
+</div>
+```
+What is the rendered #box div width and height respectively? 
+Answer: 300px x 300px
+
+
+> **top, bottom**
+>
+> It will be relative to element's parent height
+> 
+> **transform**
+>
+> It will be relative to the element itself, either its width or its height.
+>So here we are working with padding top and left properties, and both are relative to the #container's width and be calculated based on its value.
