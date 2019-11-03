@@ -36,3 +36,11 @@ solution(A);
 ```
 
 ## Documentation used
+
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc
+>
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+>
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+>
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt 
