@@ -1,6 +1,6 @@
 # Task description
 
-AWrite a function:
+Write a function:
 
 function solution(A);
  

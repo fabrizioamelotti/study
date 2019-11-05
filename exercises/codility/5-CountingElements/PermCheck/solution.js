@@ -1,5 +1,4 @@
 function solution(A) {
-    debugger
     const n = Math.trunc(A.length/2);
 
     // Always the position 0 is the length of the array
@@ -22,4 +21,4 @@ function solution(A) {
     return 1;
 }
 
-// TODO - Incomplete
+// TODO - Incomplete - 66%
