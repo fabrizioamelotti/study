@@ -96,7 +96,16 @@ console.log(number);
 ```
 
 # LET
-sdfdsfs
+Declare a variable with 'let' is a variable with Block Scope.
+Variables declared inside a block {} can not be accessed from outside the block:
+
+```javascript
+{
+    let hello = 'hello'
+}
+// hello = 'hi'
+// hello can't be used here
+```
 
 > Some information
 >
