@@ -7,7 +7,7 @@ Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global
 ```javascript
 // Empty Array
 const arr1 = new Array();
-const arr2 = [];
+const arr2 = []; // This is the recommended way to create an array
 
 // List of numbers
 const numbers = [1,2,3,4];
@@ -30,23 +30,21 @@ const number = 1;
 const string = "Hello";
 const emptyArray = [];
 
-console.log(`isArray number? ${Array.isArray(number)}`);
-console.log(`isArray string? ${Array.isArray(string)}`);
-console.log(`isArray array? ${Array.isArray(emptyArray)}`);
-
-// False
-// False
-// True
+console.log(`isArray number? ${Array.isArray(number)}`); // false
+console.log(`isArray string? ${Array.isArray(string)}`); // false
+console.log(`isArray array? ${Array.isArray(emptyArray)}`); // true
 
 // Check null
 // IF - Check the condition is true or false
-if (emptyArray) {
+// emptyArray != null -> Check if emptyArray is not undefined and is not null 
+if (emptyArray != null) {
     console.log("Array exist");
 } else {
     console.log("Array doesn't exist");
 }
 
 // Check if is not empty
+// if emptyArray.length === 0 then the array is empty and 0 is false.
 if (emptyArray.length) {
     console.log("Array with items");
 } else {
@@ -55,12 +53,12 @@ if (emptyArray.length) {
 
 // Complete check
 const arr = [1,2,3,4,5];
-if (arr && Array.isArray(arr) && arr.length) {
+if (Array.isArray(arr) && arr.length) {
     /**
      This validation is for:
-        * arr --> not undefined 
-        * arr --> not null
         * Array.isArray(arr) --> is an array object
+        *                    --> not undefined
+        *                    --> not null
         * arr.length --> not empty array
     */
     console.log("Complete Array validation");
@@ -73,12 +71,13 @@ if (arr && Array.isArray(arr) && arr.length) {
 TRUE condition:
 * true --> true (boolean true)
 * 1 --> true (number not cero is true)
-* "" --> true (string is true)
+* "hello" --> true (not empty string is true)
 * {} --> true (Object is true)
 * [] --> true (Array is true)
 
 FALSE condition
 * false --> false (boolean false)
+* "" --> false (empty string is false) --> "" ? true : false --> returns false
 * 0 --> false
 * null --> false
 * undefined --> false
@@ -163,11 +162,11 @@ while(count < 10) {
 
 > Tip: Is very important use other variable for the length! - const arrLength = arr.length - It's faster
 
-After several times... the winer is --> WHILE !!!
+After several times... the winner is --> WHILE !!!
 
 Yes, the fastest way to loop an array is with while
 
-## Usefull functions
+## Useful functions
 > Get an item from array
 ```javascript
 const numbers = [1,2,3,4];
@@ -179,93 +178,77 @@ console.log(`Last: ${numbers[numbers.length - 1]}`);
 > Length
 ```javascript
 const numbers = [1,2,3,4];
-console.log(numbers.length);
-// 4
+console.log(numbers.length); // 4
 ```
 
 > Add item to the front
 ```javascript
 const numbers = [1,2,3,4];
 numbers.unshift(0);
-console.log(numbers);
-// [0, 1, 2, 3, 4]
+console.log(numbers); // [0, 1, 2, 3, 4]
 ```
 
 > Add item to the end
 ```javascript
 const numbers = [1,2,3,4];
 numbers.push(5);
-console.log(numbers);
-// [1, 2, 3, 4, 5]
+console.log(numbers); // [1, 2, 3, 4, 5]
 ```
 
 > Remove item to the front
 ```javascript
 const numbers = [1,2,3,4];
-numbers.shift();
-console.log(numbers);
-// [2, 3, 4]
+numbers.shift(); // returns the element deleted - 1
+console.log(numbers); // [2, 3, 4]
 ```
 
 > Remove item to the end
 ```javascript
 const numbers = [1,2,3,4];
-numbers.pop();
-console.log(numbers);
-// [1, 2, 3]
+numbers.pop(); // returns the element deleted - 4
+console.log(numbers); // [1, 2, 3]
 ```
 
 > Copy an array - Two different arrays
 ```javascript
 const arr1 = [1,2,3,4];
 const arr2 = arr1.slice();
-console.log(`arr1: ${arr1}`);
-console.log(`arr2: ${arr2}`);
-// arr1: [1, 2, 3, 4]
-// arr2: [1, 2, 3, 4]
+console.log(`arr1: ${arr1}`); // arr1: [1, 2, 3, 4]
+console.log(`arr2: ${arr2}`); // arr2: [1, 2, 3, 4]
 
 arr1.push(5);
 arr2.push(6);
 
-console.log(`arr1: ${arr1}`);
-console.log(`arr2: ${arr2}`);
-// arr1: [1, 2, 3, 4, 5]
-// arr2: [1, 2, 3, 4, 6]
+console.log(`arr1: ${arr1}`); // arr1: [1, 2, 3, 4, 5]
+console.log(`arr2: ${arr2}`); // arr2: [1, 2, 3, 4, 6]
 
 // Wrong way to copy!
 const arr3 = [1,2,3];
 const arr4 = arr3;
 
-console.log(`arr3: ${arr3}`);
-console.log(`arr4: ${arr4}`);
-// arr3: [1, 2, 3]
-// arr4: [1, 2, 3]
+console.log(`arr3: ${arr3}`); // arr3: [1, 2, 3]
+console.log(`arr4: ${arr4}`); // arr4: [1, 2, 3]
 
 arr3.push(4);
 
-console.log(`arr3: ${arr3}`);
-console.log(`arr4: ${arr4}`);
-// arr3: [1, 2, 3, 4]
-// arr4: [1, 2, 3, 4]
-// Wht? Because is the same array!!!
+console.log(`arr3: ${arr3}`); // arr3: [1, 2, 3, 4]
+console.log(`arr4: ${arr4}`); // arr4: [1, 2, 3, 4]
+// Why? Because is the same array!!!
 ```
+
 ```javascript
 // Another way to copy an array
 const arr1 = [1,2,3];
 const arr2 = Array.from(arr1);
 
-console.log(`arr1: ${arr1}`);
-console.log(`arr2: ${arr2}`);
-// arr1: [1, 2, 3]
-// arr2: [1, 2, 3]
+console.log(`arr1: ${arr1}`); // arr1: [1, 2, 3]
+console.log(`arr2: ${arr2}`); // arr2: [1, 2, 3]
 
 arr1.push(4);
 arr2.push(5);
 
-console.log(`arr1: ${arr1}`);
-console.log(`arr2: ${arr2}`);
-// arr1: [1, 2, 3, 4]
-// arr2: [1, 2, 3, 5]
+console.log(`arr1: ${arr1}`); // arr1: [1, 2, 3, 4]
+console.log(`arr2: ${arr2}`); // arr2: [1, 2, 3, 5]
 ```
 
 > Filter
@@ -277,8 +260,7 @@ const numbers = [1,2,3,55,45,6456,324,100,777,44,77,1235654];
 // Get all the numbers bigger than 100
 const result = numbers.filter(n => n > 100);
 
-console.log(`Bigger than 100: ${result}`);
-// [6456,324,777,1235654]
+console.log(`Bigger than 100: ${result}`); // [6456,324,777,1235654]
 ```
 
 > Every
@@ -290,8 +272,7 @@ const numbers = [1,2,3,55,45,6456,324,100,777,44,77,1235654];
 // Check if all the numbers are bigger than 1000
 const result = numbers.every(n => n > 1000);
 
-console.log(`Every number is bigger than 1000? ${result}`);
-// False
+console.log(`Every number is bigger than 1000? ${result}`); // false
 ```
 
 > Some
@@ -303,8 +284,7 @@ const numbers = [1,2,3,55,45,6456,324,100,777,44,77,1235654];
 // Check if some the numbers are bigger than 1000
 const result = numbers.some(n => n > 1000);
 
-console.log(`Some numbers is bigger than 1000? ${result}`);
-// True
+console.log(`Some numbers is bigger than 1000? ${result}`); // true
 ```
 
 > Map
@@ -317,6 +297,5 @@ const numbers = [2,4,6,8,10];
 const result = numbers.map(n => n * 2);
 
 console.log(`Original: ${numbers}`);
-console.log(`Double: ${result}`);
-// True
+console.log(`Double: ${result}`); // true
 ```
