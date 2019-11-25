@@ -23,7 +23,7 @@ function getElements() {
     return elements;
 }
 
-function arrayEqual(arr1, arr2) {
+function arraysEqual(arr1, arr2) {
     if (arr1.length !== arr2.length) {
         return false;
     }
@@ -36,6 +36,11 @@ function arrayEqual(arr1, arr2) {
     }
 
     return true;
+}
+
+// Another possible function to compare arrays
+function arraysEqualString(arr1, arr2) {
+    return arr1.toString() === arr2.toString();
 }
 
 const nestedArray = [1, 2, [3, 4], [[5], [6, 7], 8], 9];
@@ -53,14 +58,14 @@ console.log('Unit Test');
 console.log("Simple Array");
 const unitTest1Value = [1, 2, 3];
 const unitTest1Success = [1, 2, 3];
-console.assert(arrayEqual(getFlattenArray(unitTest1Value), unitTest1Success), "Test 1 Error!");
+console.assert(arraysEqual(getFlattenArray(unitTest1Value), unitTest1Success), "Test 1 Error!");
 
 console.log("An array with other array inside");
 const unitTest2Value = [1, [2], 3];
 const unitTest2Success = [1, 2, 3];
-console.assert(arrayEqual(getFlattenArray(unitTest2Value), unitTest2Success), "Test 2 Error!");
+console.assert(arraysEqual(getFlattenArray(unitTest2Value), unitTest2Success), "Test 2 Error!");
 
 console.log("Full nested array");
 const unitTest3Value = [1, [2, [3, [4]]], 5];
 const unitTest3Success = [1, 2, 3, 4, 5];
-console.assert(arrayEqual(getFlattenArray(unitTest3Value), unitTest3Success), "Test 3 Error!");
+console.assert(arraysEqual(getFlattenArray(unitTest3Value), unitTest3Success), "Test 3 Error!");
