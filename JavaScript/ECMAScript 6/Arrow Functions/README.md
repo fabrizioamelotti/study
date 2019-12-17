@@ -15,19 +15,14 @@ This is very similar to traditional functions, we just leave off the function ke
 const sum1 = (a,b) => { return a + b };
 const sum2 = (a,b) => a + b;
 // Examples
-console.log(sum1(1,2));
-console.log(sum2(2,2));
-// Results
-// 3
-// 4
+console.log(sum1(1,2)); // 3
+console.log(sum2(2,2)); // 4
 ```
 > If we have just 1 argument, we can leave off the parenthesis
 ```javascript
 const getFirst = array => array[0];
 // Example
-console.log(getFirst([11,22,33]));
-// Result
-// 11
+console.log(getFirst([11,22,33])); // 11
 ```
 
 ## Enclosing Scope Context
@@ -53,10 +48,12 @@ console.log(person.getFullName1());
 console.log(person.getFullName2());
 
 // Results
-// getFullName1: Fabrizio Amelotti - String
-// getFullName2:  - Empty string - Doesn't work because the arrow function doesn't have their own execution context
+// getFullName1: "Fabrizio Amelotti" -> String
+// getFullName2: " undefined" -> Doesn't work because the arrow function doesn't have their own execution context
 ```
+
 Other Example:
+
 ```javascript
 const test = {
   name: 'Fabrizio',
@@ -94,21 +91,19 @@ The arrow function, on the other hand, has the exact same function context as th
 
 ## Where do I use this?
 Some examples
+
 ```javascript
 const arr = [1,2,3,4,5];
 const result1 = arr.map(n => n + 1);
-console.log(result1);
-// [2, 3, 4, 5, 6]
+console.log(result1); // [2, 3, 4, 5, 6]
 
 const objects = [{id: 1, name: "Fabrizio"}, {id: 2, name: "Samuel"}, {id: 3, name: "Ricardo", surname: "Fort", tag: "El comandante"}]
 const result2 = objects.map(o => o.name);
-console.log(result2);
-// ["Fabrizio", "Samuel", "Ricardo"]
+console.log(result2); // ["Fabrizio", "Samuel", "Ricardo"]
 
 // Get the property name of the object and return it
 const result3 = objects.map(({name}) => name);
-console.log(result3);
-// ["Fabrizio", "Samuel", "Ricardo"]
+console.log(result3); // ["Fabrizio", "Samuel", "Ricardo"]
 
 const arr2 = [2,4,6];
 arr2.forEach(number => {
@@ -133,6 +128,7 @@ new Promise((resolve, reject) => {
 
 ## Where You Should Not Use Arrow Functions
 Don't use in objects
+
 ```javascript
 // This is wrong
 class pokemonWrong {
@@ -152,6 +148,7 @@ class pokemon {
     }   
 }
 ```
+
 ```javascript
 const person = {
     id: 1,

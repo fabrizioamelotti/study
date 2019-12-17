@@ -36,7 +36,7 @@ class Dog {
 }
 
 let dog = new Dog("Mia");
-console.log(dog.sayHello());
+console.log(dog.sayHello()); // Hello, my name is: Mia
 ```
 
 ## Static Methods
@@ -71,7 +71,7 @@ console.log(Dog.hi());
 
 ## Inheritance
 
-To create a class inheritance, use the extends keyword.
+To create a class inheritance, use the **extends** keyword.
 
 A class created with a class inheritance inherits all the methods from another class:
 

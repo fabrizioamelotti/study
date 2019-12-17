@@ -13,28 +13,26 @@ What is the difference between them? But firstly, some additional information:
 There are some rules while declaring a JavaScript variable (also known as identifiers).
 
 1. Name must start with a letter (a to z or A to Z), underscore( _ ), or dollar( $ ) sign.
-2. After first letter we can use digits (0 to 9), for example value1.
+2. After first letter we can use digits (0 to 9), for example: 'value1'.
 3. JavaScript variables are case sensitive, for example x and X are different variables.
 4. All JavaScript variables must be identified with unique names.
-5. Reserved words (like JavaScript keywords) cannot be used as names
+5. Reserved words (like JavaScript keywords) cannot be used as names.
 
 ```javascript
 let hello = 1;
 let HELLO = 2;
 
-console.log(hello);
-console.log(HELLO);
-// 1
-// 2 
+console.log(hello); // 1
+console.log(HELLO); // 2 
 
 // More examples
 let hello123 = 213;
 let _hello1 = 1;
 let $hello = 1234;
 
-console.log(hello123);
-console.log(_hello1);
-console.log($hello);
+console.log(hello123); // 213
+console.log(_hello1); // 1
+console.log($hello); // 1234
 ```
 
 # Global variable or Local variable
@@ -43,20 +41,20 @@ var globalVariable = "Global";
 
 function hello() {
     var localVariable = "Hello local";
-    console.log(localVariable);
-    console.log(globalVariable);
+    console.log(localVariable); // Hello local
+    console.log(globalVariable); // Global
 }
 function bye() {
     var localVariable = "Bye local";
-    console.log(localVariable);
-    console.log(globalVariable);
+    console.log(localVariable); // Bye local
+    console.log(globalVariable); // Global
 }
 
 hello();
 bye();
 
-console.log(globalVariable);
-console.log(localVariable);
+console.log(globalVariable); // Global
+console.log(localVariable); // Error -> localVariable is not defined
 
 // Results
 // Hello local
@@ -64,15 +62,17 @@ console.log(localVariable);
 // Bye local
 // Global
 // Global
-// Error
+// Error -> localVariable is not defined
 ```
 
-Whats is wronge?
+Whats is wrong?
 The issue is because in javascript the variables exist just in a specific block.
 
-> Bloque hello & bye - localVariable exist just here, in the hello function
+> Block hello & bye - localVariable exist just here, in the hello function
 > 
 > The same happend with the bye function, that's why too we can use the same name in both functions.
+>
+> VAR is a variable with **Function Scope**
 
 # VAR
 The first way to create a variable in javascript was "var".
@@ -83,20 +83,17 @@ The first way to create a variable in javascript was "var".
 
 ```javascript
 var number = 1;
-console.log(number);
-var number;
-console.log(number);
-var number = 2;
-console.log(number);
+console.log(number); // 1
 
-// Result
-// 1
-// 1
-// 2
+var number;
+console.log(number); // 1
+
+var number = 2;
+console.log(number); // 2
 ```
 
 # LET
-Declare a variable with 'let' is a variable with Block Scope.
+Declare a variable with 'let' is a variable with **Block Scope**.
 Variables declared inside a block {} can not be accessed from outside the block:
 
 ```javascript
@@ -104,16 +101,17 @@ Variables declared inside a block {} can not be accessed from outside the block:
     let hello = 'hello'
 }
 // hello = 'hi'
-// hello can't be used here
+// 'hello' variable can't be used here
 ```
 
 > Some information
 >
-> Re-declare is not allowed
+> Re-declare is **NOT allowed**
 
 ```javascript
 let number = 1;
-console.log(number);
+console.log(number); // 1
+
 let number;
 
 // Result
@@ -126,8 +124,7 @@ More information: https://www.w3schools.com/js/js_const.asp
 
 ```javascript
 const hi = 'Hi';
-console.log(hi);
-// 'Hi'
+console.log(hi); // Hi
 
 hi = 'Hello';
 // Error!! -> Uncaught TypeError: Assignment to constant variable.
@@ -138,8 +135,7 @@ hi = 'Hello';
 const x = 1;
 {
     const y = 2;
-    console.log(x);
-    // 1
+    console.log(x); // 1
 }
 console.log(y);
 // Uncaught ReferenceError: y is not defined
@@ -149,8 +145,7 @@ console.log(y);
 ```javascript
 // Correct
 const numberSeven = 7;
-console.log(numberSeven);
-// 7
+console.log(numberSeven); // 7
 
 // Incorrect
 const numberNine;
@@ -172,20 +167,16 @@ arrX = [2,2,2,2,2];
 > CONST Object & Array can change
 ```javascript
 const obj = { id: 1 };
-console.log(obj.id);
-// 1
+console.log(obj.id); // 1
 
 obj.id = 2;
-console.log(obj.id);
-// 2
+console.log(obj.id); // 2
 
 const array = [1,2,3];
-console.log(array);
-// [1, 2, 3]
+console.log(array); // [1, 2, 3]
 
 array.push(4);
-console.log(array);
-// [1, 2, 3, 4]
+console.log(array); // [1, 2, 3, 4]
 ```
 
 # HOISTING
@@ -195,36 +186,34 @@ More: https://www.w3schools.com/js/js_hoisting.asp
 
 > IMPORTANT
 >
-> Variables and constants declared with **let** or **const** are not hoisted!
+> Variables and constants declared with **let** or **const** are **NOT HOISTED!**
 
 > Normal declaration
 ```javascript
 var x = 5;
-console.log(x);
-// 5
+console.log(x); // 5 
 ```
 
 > How?
 ```javascript
 {
-    console.log(x);
-    // undefined
+    console.log(x); // undefined
     var x = 5;
-    console.log(x);
-    // 5
+    console.log(x); // 5
 }
 ```
+
 Explanation: Javascript moves the **DECLARATION** to the top ->
+
 ```javascript
 {
     var x;
-    console.log(x);
-    // undefined
+    console.log(x); // undefined
     x = 5;
-    console.log(x);
-    // 5
+    console.log(x); // 5
 }
 ```
+
 That's why "x" at the first console.log is undefined.
 
 > IMPORTANT! Just the DECLARATION is moved, not the initialization
@@ -258,5 +247,5 @@ x = 4
 // CORRECT
 "use strict"
 let x = 4;
-console.log(x);
+console.log(x); // 4
 ```
